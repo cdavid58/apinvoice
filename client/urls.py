@@ -1,0 +1,8 @@
+from django.conf.urls import url
+from .views import *
+
+urlpatterns=[
+		url(r'^CREATE_CLIENT/$',CREATE_CLIENT,name="CREATE_CLIENT"),
+		url(r'^GET_LIST_CLIENT/$',GET_LIST_CLIENT,name="GET_LIST_CLIENT"),
+		url(r'^GET_CLIENT/$',GET_CLIENT,name="GET_CLIENT"),
+	]
