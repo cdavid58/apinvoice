@@ -10,7 +10,6 @@ c = Create_Client()
 @api_view(['POST'])
 def CREATE_CLIENT(request):
 	data = request.data
-	print(data)
 	result = c.CREATE_CLIENT(data)
 	return Response({'Result':result})
 

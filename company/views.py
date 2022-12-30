@@ -8,6 +8,7 @@ from .query_api import Query_Company
 
 @api_view(['POST'])
 def Create_Company(request):
+	# print(str(request.headers['Authorization']).replace('Bearer','').strip())
 	register = Query_Company(request.data)
 	result = False
 	if register.Create_Company():

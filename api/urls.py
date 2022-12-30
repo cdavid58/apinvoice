@@ -10,6 +10,8 @@ urlpatterns = [
     url(r'^employee/', include('employee.urls')),
     url(r'^client/', include('client.urls')),
     url(r'^inventory/', include('inventory.urls')),
+    url(r'^invoice_fe/', include('invoice.urls')),
+    url(r'^pos/', include('pos.urls')),
     url(r'^data/', include('data.urls')),
 ]
 

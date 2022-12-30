@@ -27,7 +27,7 @@ class Create_Client:
 				'pk':i.pk,
 				'name': i.name
 			}
-			for i in Client.objects.filter(company = Company.objects.get(nit = data['company']))
+			for i in Client.objects.filter(company = Company.objects.get(pk = data['company']))
 		]
 
 	def GET_CLIENT(self,data):
@@ -36,7 +36,8 @@ class Create_Client:
 				'pk': c.pk,
 				'name': c.name,
 				"phone": c.phone if c.phone is not None else 'No tiene',
-				"address":c.address if c.address is not None else 'No tiene'
+				"address":c.address if c.address is not None else 'No tiene',
+				'type':c.type_client
 			}
 			
 

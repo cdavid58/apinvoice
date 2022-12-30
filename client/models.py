@@ -15,6 +15,7 @@ class Client(models.Model):
 	type_regime = models.ForeignKey(Type_Regime,on_delete=models.CASCADE, blank=True,null=True)
 	municipality = models.ForeignKey(Municipality,on_delete=models.CASCADE, blank=True,null=True)
 	company = models.ForeignKey(Company,on_delete=models.CASCADE)
+	type_client = models.IntegerField(default = 1)
 
 	def __str__(self):
 		return self.name+' | '+self.company.name
