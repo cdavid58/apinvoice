@@ -22,3 +22,8 @@ def GET_LIST_CLIENT(request):
 def GET_CLIENT(request):
 	data = request.data
 	return Response({'client':c.GET_CLIENT(data)})
+
+@api_view(['POST'])
+def DELETE_CLIENT(request):
+	data = request.data
+	return Response({'client':c.DELETE_CLIENT(data)})

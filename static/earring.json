@@ -1,0 +1,69 @@
+{
+    "number": 8,
+    "type_document_id": 1,
+    "date": "2022-12-14",
+    "time": "21:45",
+    "resolution_number": "18760000001",
+    "prefix": "SETP",
+    "notes": "ESTA ES UNA NOTA DE PRUEBA, ESTA ES UNA NOTA DE PRUEBA, ESTA ES UNA NOTA DE PRUEBA, ESTA ES UNA NOTA DE PRUEBA, ESTA ES UNA NOTA DE PRUEBA, ESTA ES UNA NOTA DE PRUEBA, ESTA ES UNA NOTA DE PRUEBA, ESTA ES UNA NOTA DE PRUEBA, ESTA ES UNA NOTA DE PRUEBA, ESTA ES UNA NOTA DE PRUEBA, ESTA ES UNA NOTA DE PRUEBA, ESTA ES UNA NOTA DE PRUEBA, ESTA ES UNA NOTA DE PRUEBA, ESTA ES UNA NOTA DE PRUEBA",
+    "disable_confirmation_text": true,
+    "establishment_name": "TORRE SOFTWARE",
+    "establishment_address": "BRR LIMONAR MZ 6 CS 3 ET 1 PISO 2",
+    "establishment_phone": "3226563672",
+    "establishment_municipality": 600,
+    "customer": {
+        "identification_number": 20302968,
+        "dv": null,
+        "name": "David",
+        "phone": null,
+        "address": "",
+        "email": "",
+        "merchant_registration": null,
+        "type_document_identification_id": 6,
+        "type_organization_id": 1,
+        "type_liability_id": 7,
+        "municipality_id": 1,
+        "type_regime_id": 1
+    },
+    "payment_form": {
+        "payment_form_id": 1,
+        "payment_method_id": 10,
+        "payment_due_date": "2022-12-14",
+        "duration_measure": -19
+    },
+    "legal_monetary_totals": {
+        "line_extension_amount": 1371,
+        "tax_exclusive_amount": 1371,
+        "tax_inclusive_amount": 1632,
+        "payable_amount": 1632
+    },
+    "tax_totals": [
+        {
+            "tax_id": 1,
+            "tax_amount": "260.6",
+            "percent": "19",
+            "taxable_amount": "1371.4"
+        }
+    ],
+    "invoice_lines": [
+        {
+            "unit_measure_id": 70,
+            "invoiced_quantity": 1.0,
+            "line_extension_amount": 1371.4,
+            "free_of_charge_indicator": false,
+            "tax_totals": [
+                {
+                    "tax_id": 1,
+                    "tax_amount": 260.6,
+                    "taxable_amount": 1371.4,
+                    "percent": 19.0
+                }
+            ],
+            "description": "harina",
+            "code": 8,
+            "type_item_identification_id": 4,
+            "price_amount": 1632,
+            "base_quantity": 1.0
+        }
+    ]
+}

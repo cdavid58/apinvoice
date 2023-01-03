@@ -1,5 +1,5 @@
 from datetime import date
-import json, requests
+import json, requests,os
 
 class SEND_DIAN:
 	def __init__(self,invoice):
@@ -10,6 +10,22 @@ class SEND_DIAN:
 		today = date.today()
 		_days = (future_date - today).days
 		return _days
+
+	def Information(self):
+		return {
+			"number": self.invoice.last().consecutive,
+			"type_document_id": 1,
+			"date": self.invoice.last().date,
+			"time": self.invoice.last().time,
+			"resolution_number": "18760000001",
+			"prefix": "SETP",
+		   "notes": "ESTA ES UNA NOTA DE PRUEBA, ESTA ES UNA NOTA DE PRUEBA, ESTA ES UNA NOTA DE PRUEBA, ESTA ES UNA NOTA DE PRUEBA, ESTA ES UNA NOTA DE PRUEBA, ESTA ES UNA NOTA DE PRUEBA, ESTA ES UNA NOTA DE PRUEBA, ESTA ES UNA NOTA DE PRUEBA, ESTA ES UNA NOTA DE PRUEBA, ESTA ES UNA NOTA DE PRUEBA, ESTA ES UNA NOTA DE PRUEBA, ESTA ES UNA NOTA DE PRUEBA, ESTA ES UNA NOTA DE PRUEBA, ESTA ES UNA NOTA DE PRUEBA",
+		   "disable_confirmation_text": True,
+		   "establishment_name": "TORRE SOFTWARE",
+		   "establishment_address": "BRR LIMONAR MZ 6 CS 3 ET 1 PISO 2",
+		   "establishment_phone": "3226563672",
+		   "establishment_municipality": 600,
+		}
 
 	def Customer(self):
 		c = self.invoice.last().client
@@ -122,12 +138,15 @@ class SEND_DIAN:
 		  'Accept': 'application/json',
 		  'Authorization': 'Bearer 7692a20fec92af0aa5729d796b019d27c83c9955407994630a0cdd7702ca2329'
 		}
-		data = {}
+		data = self.Information()
 		data['customer'] = self.Customer()
 		data['payment_form'] = self.Payment_Form()
 		data['legal_monetary_totals'] = self.Monetary_Totals()
 		data['tax_totals'] = self.Tax_Totals()
 		data['invoice_lines'] = self.Invoice_Lines()
+		os.remove('./static/earring.json')
+		with open("./static/earring.json","w") as file:
+			json.dump(data, file, indent=4)
 
 		# response = requests.request("POST", url, headers=headers, data=payload)
 		# response_dict = json.loads(response.text)
@@ -135,7 +154,7 @@ class SEND_DIAN:
 		# if int(response.status_code) == 200:
 			# self.invoice.last().state = answer
 
-		self.invoice.last().state = 'Procesado Correctamente'
+		self.invoice.last().state = 'Enviando la Factura'
 		self.invoice.last().save()
 
 		# response.connection.close()

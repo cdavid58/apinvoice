@@ -1,0 +1,1082 @@
+[
+    {
+        "pk": 1163,
+        "consecutive": 1139,
+        "client": "David",
+        "total": 1500.0,
+        "state": "Sin enviar a la DIAN",
+        "date": "2022-12-14"
+    },
+    {
+        "pk": 1299,
+        "consecutive": 360,
+        "client": "David",
+        "total": 5999.9,
+        "state": "Procesado Correctamente",
+        "date": "2022-12-16"
+    },
+    {
+        "pk": 1296,
+        "consecutive": 357,
+        "client": "David",
+        "total": 1260.4,
+        "state": "Procesado Correctamente",
+        "date": "2022-12-29"
+    },
+    {
+        "pk": 1295,
+        "consecutive": 356,
+        "client": "David",
+        "total": 1260.4,
+        "state": "Sin enviar a la DIAN",
+        "date": "2022-12-16"
+    },
+    {
+        "pk": 1294,
+        "consecutive": 355,
+        "client": "David",
+        "total": 1260.4,
+        "state": "Sin enviar a la DIAN",
+        "date": "2022-12-16"
+    },
+    {
+        "pk": 1293,
+        "consecutive": 354,
+        "client": "David",
+        "total": 1260.4,
+        "state": "Sin enviar a la DIAN",
+        "date": "2022-12-16"
+    },
+    {
+        "pk": 1292,
+        "consecutive": 353,
+        "client": "David",
+        "total": 1260.4,
+        "state": "Sin enviar a la DIAN",
+        "date": "2022-12-16"
+    },
+    {
+        "pk": 1291,
+        "consecutive": 352,
+        "client": "David",
+        "total": 1260.4,
+        "state": "Sin enviar a la DIAN",
+        "date": "2022-12-16"
+    },
+    {
+        "pk": 1290,
+        "consecutive": 351,
+        "client": "David",
+        "total": 1260.4,
+        "state": "Sin enviar a la DIAN",
+        "date": "2022-12-16"
+    },
+    {
+        "pk": 1289,
+        "consecutive": 350,
+        "client": "David",
+        "total": 1260.4,
+        "state": "Sin enviar a la DIAN",
+        "date": "2022-12-16"
+    },
+    {
+        "pk": 1288,
+        "consecutive": 125,
+        "client": "David",
+        "total": 1260.4,
+        "state": "Sin enviar a la DIAN",
+        "date": "2022-12-16"
+    },
+    {
+        "pk": 1287,
+        "consecutive": 124,
+        "client": "David",
+        "total": 1260.4,
+        "state": "Sin enviar a la DIAN",
+        "date": "2022-12-16"
+    },
+    {
+        "pk": 1286,
+        "consecutive": 123,
+        "client": "David",
+        "total": 1260.4,
+        "state": "Sin enviar a la DIAN",
+        "date": "2022-12-16"
+    },
+    {
+        "pk": 1285,
+        "consecutive": 122,
+        "client": "David",
+        "total": 1260.4,
+        "state": "Sin enviar a la DIAN",
+        "date": "2022-12-16"
+    },
+    {
+        "pk": 1284,
+        "consecutive": 121,
+        "client": "David",
+        "total": 1260.4,
+        "state": "Sin enviar a la DIAN",
+        "date": "2022-12-16"
+    },
+    {
+        "pk": 1283,
+        "consecutive": 120,
+        "client": "David",
+        "total": 1260.4,
+        "state": "Sin enviar a la DIAN",
+        "date": "2022-12-16"
+    },
+    {
+        "pk": 1282,
+        "consecutive": 119,
+        "client": "David",
+        "total": 1260.4,
+        "state": "Sin enviar a la DIAN",
+        "date": "2022-12-16"
+    },
+    {
+        "pk": 1281,
+        "consecutive": 118,
+        "client": "David",
+        "total": 1260.4,
+        "state": "Sin enviar a la DIAN",
+        "date": "2022-12-16"
+    },
+    {
+        "pk": 1280,
+        "consecutive": 117,
+        "client": "David",
+        "total": 1260.4,
+        "state": "Sin enviar a la DIAN",
+        "date": "2022-12-16"
+    },
+    {
+        "pk": 1279,
+        "consecutive": 116,
+        "client": "David",
+        "total": 1260.4,
+        "state": "Sin enviar a la DIAN",
+        "date": "2022-12-16"
+    },
+    {
+        "pk": 1278,
+        "consecutive": 115,
+        "client": "David",
+        "total": 1260.4,
+        "state": "Sin enviar a la DIAN",
+        "date": "2022-12-16"
+    },
+    {
+        "pk": 1277,
+        "consecutive": 114,
+        "client": "David",
+        "total": 1260.4,
+        "state": "Sin enviar a la DIAN",
+        "date": "2022-12-16"
+    },
+    {
+        "pk": 1276,
+        "consecutive": 113,
+        "client": "David",
+        "total": 1260.4,
+        "state": "Sin enviar a la DIAN",
+        "date": "2022-12-16"
+    },
+    {
+        "pk": 1275,
+        "consecutive": 112,
+        "client": "David",
+        "total": 1260.4,
+        "state": "Sin enviar a la DIAN",
+        "date": "2022-12-16"
+    },
+    {
+        "pk": 1274,
+        "consecutive": 111,
+        "client": "David",
+        "total": 1260.4,
+        "state": "Sin enviar a la DIAN",
+        "date": "2022-12-16"
+    },
+    {
+        "pk": 1273,
+        "consecutive": 110,
+        "client": "David",
+        "total": 1260.4,
+        "state": "Sin enviar a la DIAN",
+        "date": "2022-12-16"
+    },
+    {
+        "pk": 1272,
+        "consecutive": 109,
+        "client": "David",
+        "total": 1260.4,
+        "state": "Sin enviar a la DIAN",
+        "date": "2022-12-16"
+    },
+    {
+        "pk": 1271,
+        "consecutive": 108,
+        "client": "David",
+        "total": 1260.4,
+        "state": "Sin enviar a la DIAN",
+        "date": "2022-12-16"
+    },
+    {
+        "pk": 1270,
+        "consecutive": 107,
+        "client": "David",
+        "total": 1260.4,
+        "state": "Sin enviar a la DIAN",
+        "date": "2022-12-16"
+    },
+    {
+        "pk": 1269,
+        "consecutive": 106,
+        "client": "David",
+        "total": 1260.4,
+        "state": "Sin enviar a la DIAN",
+        "date": "2022-12-16"
+    },
+    {
+        "pk": 1268,
+        "consecutive": 105,
+        "client": "David",
+        "total": 1260.4,
+        "state": "Sin enviar a la DIAN",
+        "date": "2022-12-16"
+    },
+    {
+        "pk": 1267,
+        "consecutive": 104,
+        "client": "David",
+        "total": 1260.4,
+        "state": "Sin enviar a la DIAN",
+        "date": "2022-12-16"
+    },
+    {
+        "pk": 1266,
+        "consecutive": 103,
+        "client": "David",
+        "total": 1260.4,
+        "state": "Sin enviar a la DIAN",
+        "date": "2022-12-16"
+    },
+    {
+        "pk": 1265,
+        "consecutive": 102,
+        "client": "David",
+        "total": 1260.4,
+        "state": "Sin enviar a la DIAN",
+        "date": "2022-12-16"
+    },
+    {
+        "pk": 1264,
+        "consecutive": 101,
+        "client": "David",
+        "total": 1260.4,
+        "state": "Sin enviar a la DIAN",
+        "date": "2022-12-16"
+    },
+    {
+        "pk": 1263,
+        "consecutive": 100,
+        "client": "David",
+        "total": 2399.0,
+        "state": "Sin enviar a la DIAN",
+        "date": "2022-12-14"
+    },
+    {
+        "pk": 1262,
+        "consecutive": 99,
+        "client": "David",
+        "total": 4778.0,
+        "state": "Sin enviar a la DIAN",
+        "date": "2022-12-14"
+    },
+    {
+        "pk": 1261,
+        "consecutive": 98,
+        "client": "David",
+        "total": 2263.0,
+        "state": "Sin enviar a la DIAN",
+        "date": "2022-12-14"
+    },
+    {
+        "pk": 1260,
+        "consecutive": 97,
+        "client": "David",
+        "total": 2778.1,
+        "state": "Sin enviar a la DIAN",
+        "date": "2022-12-14"
+    },
+    {
+        "pk": 1259,
+        "consecutive": 96,
+        "client": "David",
+        "total": 4265.0,
+        "state": "Sin enviar a la DIAN",
+        "date": "2022-12-14"
+    },
+    {
+        "pk": 1258,
+        "consecutive": 95,
+        "client": "David",
+        "total": 2893.0,
+        "state": "Sin enviar a la DIAN",
+        "date": "2022-12-14"
+    },
+    {
+        "pk": 1257,
+        "consecutive": 94,
+        "client": "David",
+        "total": 4778.0,
+        "state": "Sin enviar a la DIAN",
+        "date": "2022-12-14"
+    },
+    {
+        "pk": 1256,
+        "consecutive": 93,
+        "client": "David",
+        "total": 3149.0,
+        "state": "Sin enviar a la DIAN",
+        "date": "2022-12-14"
+    },
+    {
+        "pk": 1255,
+        "consecutive": 92,
+        "client": "David",
+        "total": 4851.0,
+        "state": "Sin enviar a la DIAN",
+        "date": "2022-12-14"
+    },
+    {
+        "pk": 1254,
+        "consecutive": 91,
+        "client": "David",
+        "total": 3062.9,
+        "state": "Sin enviar a la DIAN",
+        "date": "2022-12-14"
+    },
+    {
+        "pk": 1253,
+        "consecutive": 90,
+        "client": "David",
+        "total": 3267.0,
+        "state": "Sin enviar a la DIAN",
+        "date": "2022-12-14"
+    },
+    {
+        "pk": 1252,
+        "consecutive": 89,
+        "client": "David",
+        "total": 3614.0,
+        "state": "Sin enviar a la DIAN",
+        "date": "2022-12-14"
+    },
+    {
+        "pk": 1251,
+        "consecutive": 88,
+        "client": "David",
+        "total": 1995.0,
+        "state": "Sin enviar a la DIAN",
+        "date": "2022-12-14"
+    },
+    {
+        "pk": 1250,
+        "consecutive": 87,
+        "client": "David",
+        "total": 4862.0,
+        "state": "Sin enviar a la DIAN",
+        "date": "2022-12-14"
+    },
+    {
+        "pk": 1249,
+        "consecutive": 86,
+        "client": "David",
+        "total": 4059.0,
+        "state": "Sin enviar a la DIAN",
+        "date": "2022-12-14"
+    },
+    {
+        "pk": 1248,
+        "consecutive": 85,
+        "client": "David",
+        "total": 2908.0,
+        "state": "Sin enviar a la DIAN",
+        "date": "2022-12-14"
+    },
+    {
+        "pk": 1247,
+        "consecutive": 84,
+        "client": "David",
+        "total": 4082.1,
+        "state": "Sin enviar a la DIAN",
+        "date": "2022-12-14"
+    },
+    {
+        "pk": 1246,
+        "consecutive": 83,
+        "client": "David",
+        "total": 2792.0,
+        "state": "Sin enviar a la DIAN",
+        "date": "2022-12-14"
+    },
+    {
+        "pk": 1245,
+        "consecutive": 82,
+        "client": "David",
+        "total": 2713.0,
+        "state": "Sin enviar a la DIAN",
+        "date": "2022-12-14"
+    },
+    {
+        "pk": 1244,
+        "consecutive": 81,
+        "client": "David",
+        "total": 4955.0,
+        "state": "Sin enviar a la DIAN",
+        "date": "2022-12-14"
+    },
+    {
+        "pk": 1243,
+        "consecutive": 80,
+        "client": "David",
+        "total": 3029.0,
+        "state": "Sin enviar a la DIAN",
+        "date": "2022-12-14"
+    },
+    {
+        "pk": 1242,
+        "consecutive": 79,
+        "client": "David",
+        "total": 4021.0,
+        "state": "Sin enviar a la DIAN",
+        "date": "2022-12-14"
+    },
+    {
+        "pk": 1241,
+        "consecutive": 78,
+        "client": "David",
+        "total": 3135.1,
+        "state": "Sin enviar a la DIAN",
+        "date": "2022-12-14"
+    },
+    {
+        "pk": 1240,
+        "consecutive": 77,
+        "client": "David",
+        "total": 1644.0,
+        "state": "Sin enviar a la DIAN",
+        "date": "2022-12-14"
+    },
+    {
+        "pk": 1239,
+        "consecutive": 76,
+        "client": "David",
+        "total": 2297.1,
+        "state": "Sin enviar a la DIAN",
+        "date": "2022-12-14"
+    },
+    {
+        "pk": 1238,
+        "consecutive": 75,
+        "client": "David",
+        "total": 3530.0,
+        "state": "Sin enviar a la DIAN",
+        "date": "2022-12-14"
+    },
+    {
+        "pk": 1237,
+        "consecutive": 74,
+        "client": "David",
+        "total": 1940.1,
+        "state": "Sin enviar a la DIAN",
+        "date": "2022-12-14"
+    },
+    {
+        "pk": 1236,
+        "consecutive": 73,
+        "client": "David",
+        "total": 3038.0,
+        "state": "Sin enviar a la DIAN",
+        "date": "2022-12-14"
+    },
+    {
+        "pk": 1235,
+        "consecutive": 72,
+        "client": "David",
+        "total": 2609.0,
+        "state": "Sin enviar a la DIAN",
+        "date": "2022-12-14"
+    },
+    {
+        "pk": 1234,
+        "consecutive": 71,
+        "client": "David",
+        "total": 1827.0,
+        "state": "Sin enviar a la DIAN",
+        "date": "2022-12-14"
+    },
+    {
+        "pk": 1233,
+        "consecutive": 70,
+        "client": "David",
+        "total": 3103.0,
+        "state": "Sin enviar a la DIAN",
+        "date": "2022-12-14"
+    },
+    {
+        "pk": 1232,
+        "consecutive": 69,
+        "client": "David",
+        "total": 1758.0,
+        "state": "Sin enviar a la DIAN",
+        "date": "2022-12-14"
+    },
+    {
+        "pk": 1231,
+        "consecutive": 68,
+        "client": "David",
+        "total": 3376.0,
+        "state": "Sin enviar a la DIAN",
+        "date": "2022-12-14"
+    },
+    {
+        "pk": 1230,
+        "consecutive": 67,
+        "client": "David",
+        "total": 3900.0,
+        "state": "Sin enviar a la DIAN",
+        "date": "2022-12-14"
+    },
+    {
+        "pk": 1229,
+        "consecutive": 66,
+        "client": "David",
+        "total": 2715.0,
+        "state": "Sin enviar a la DIAN",
+        "date": "2022-12-14"
+    },
+    {
+        "pk": 1228,
+        "consecutive": 65,
+        "client": "David",
+        "total": 2370.0,
+        "state": "Sin enviar a la DIAN",
+        "date": "2022-12-14"
+    },
+    {
+        "pk": 1227,
+        "consecutive": 64,
+        "client": "David",
+        "total": 3173.0,
+        "state": "Sin enviar a la DIAN",
+        "date": "2022-12-14"
+    },
+    {
+        "pk": 1226,
+        "consecutive": 63,
+        "client": "David",
+        "total": 4242.0,
+        "state": "Sin enviar a la DIAN",
+        "date": "2022-12-14"
+    },
+    {
+        "pk": 1225,
+        "consecutive": 62,
+        "client": "David",
+        "total": 1945.1,
+        "state": "Sin enviar a la DIAN",
+        "date": "2022-12-14"
+    },
+    {
+        "pk": 1224,
+        "consecutive": 61,
+        "client": "David",
+        "total": 4126.0,
+        "state": "Sin enviar a la DIAN",
+        "date": "2022-12-14"
+    },
+    {
+        "pk": 1223,
+        "consecutive": 60,
+        "client": "David",
+        "total": 1505.9,
+        "state": "Sin enviar a la DIAN",
+        "date": "2022-12-14"
+    },
+    {
+        "pk": 1222,
+        "consecutive": 59,
+        "client": "David",
+        "total": 4818.0,
+        "state": "Sin enviar a la DIAN",
+        "date": "2022-12-14"
+    },
+    {
+        "pk": 1221,
+        "consecutive": 58,
+        "client": "David",
+        "total": 4247.0,
+        "state": "Sin enviar a la DIAN",
+        "date": "2022-12-14"
+    },
+    {
+        "pk": 1220,
+        "consecutive": 57,
+        "client": "David",
+        "total": 4494.0,
+        "state": "Sin enviar a la DIAN",
+        "date": "2022-12-14"
+    },
+    {
+        "pk": 1219,
+        "consecutive": 56,
+        "client": "David",
+        "total": 4089.0,
+        "state": "Sin enviar a la DIAN",
+        "date": "2022-12-14"
+    },
+    {
+        "pk": 1218,
+        "consecutive": 55,
+        "client": "David",
+        "total": 1572.0,
+        "state": "Sin enviar a la DIAN",
+        "date": "2022-12-14"
+    },
+    {
+        "pk": 1217,
+        "consecutive": 54,
+        "client": "David",
+        "total": 1983.0,
+        "state": "Sin enviar a la DIAN",
+        "date": "2022-12-14"
+    },
+    {
+        "pk": 1216,
+        "consecutive": 53,
+        "client": "David",
+        "total": 1632.0,
+        "state": "Sin enviar a la DIAN",
+        "date": "2022-12-14"
+    },
+    {
+        "pk": 1215,
+        "consecutive": 52,
+        "client": "David",
+        "total": 2394.0,
+        "state": "Sin enviar a la DIAN",
+        "date": "2022-12-14"
+    },
+    {
+        "pk": 1214,
+        "consecutive": 51,
+        "client": "David",
+        "total": 1764.1,
+        "state": "Sin enviar a la DIAN",
+        "date": "2022-12-14"
+    },
+    {
+        "pk": 1213,
+        "consecutive": 50,
+        "client": "David",
+        "total": 1800.9,
+        "state": "Sin enviar a la DIAN",
+        "date": "2022-12-14"
+    },
+    {
+        "pk": 1212,
+        "consecutive": 49,
+        "client": "David",
+        "total": 4052.0,
+        "state": "Sin enviar a la DIAN",
+        "date": "2022-12-14"
+    },
+    {
+        "pk": 1211,
+        "consecutive": 48,
+        "client": "David",
+        "total": 2911.0,
+        "state": "Sin enviar a la DIAN",
+        "date": "2022-12-14"
+    },
+    {
+        "pk": 1210,
+        "consecutive": 47,
+        "client": "David",
+        "total": 2964.1,
+        "state": "Sin enviar a la DIAN",
+        "date": "2022-12-14"
+    },
+    {
+        "pk": 1209,
+        "consecutive": 46,
+        "client": "David",
+        "total": 4271.0,
+        "state": "Sin enviar a la DIAN",
+        "date": "2022-12-14"
+    },
+    {
+        "pk": 1208,
+        "consecutive": 45,
+        "client": "David",
+        "total": 3432.0,
+        "state": "Sin enviar a la DIAN",
+        "date": "2022-12-14"
+    },
+    {
+        "pk": 1207,
+        "consecutive": 44,
+        "client": "David",
+        "total": 4710.0,
+        "state": "Sin enviar a la DIAN",
+        "date": "2022-12-14"
+    },
+    {
+        "pk": 1206,
+        "consecutive": 43,
+        "client": "David",
+        "total": 1732.0,
+        "state": "Sin enviar a la DIAN",
+        "date": "2022-12-14"
+    },
+    {
+        "pk": 1205,
+        "consecutive": 42,
+        "client": "David",
+        "total": 4602.0,
+        "state": "Sin enviar a la DIAN",
+        "date": "2022-12-14"
+    },
+    {
+        "pk": 1204,
+        "consecutive": 41,
+        "client": "David",
+        "total": 3725.1,
+        "state": "Sin enviar a la DIAN",
+        "date": "2022-12-14"
+    },
+    {
+        "pk": 1203,
+        "consecutive": 40,
+        "client": "David",
+        "total": 2740.0,
+        "state": "Sin enviar a la DIAN",
+        "date": "2022-12-14"
+    },
+    {
+        "pk": 1202,
+        "consecutive": 39,
+        "client": "David",
+        "total": 3430.1,
+        "state": "Sin enviar a la DIAN",
+        "date": "2022-12-14"
+    },
+    {
+        "pk": 1201,
+        "consecutive": 38,
+        "client": "David",
+        "total": 1898.1,
+        "state": "Sin enviar a la DIAN",
+        "date": "2022-12-14"
+    },
+    {
+        "pk": 1200,
+        "consecutive": 37,
+        "client": "David",
+        "total": 4123.0,
+        "state": "Sin enviar a la DIAN",
+        "date": "2022-12-14"
+    },
+    {
+        "pk": 1199,
+        "consecutive": 36,
+        "client": "David",
+        "total": 4810.0,
+        "state": "Sin enviar a la DIAN",
+        "date": "2022-12-14"
+    },
+    {
+        "pk": 1198,
+        "consecutive": 35,
+        "client": "David",
+        "total": 3211.0,
+        "state": "Sin enviar a la DIAN",
+        "date": "2022-12-14"
+    },
+    {
+        "pk": 1197,
+        "consecutive": 34,
+        "client": "David",
+        "total": 4497.0,
+        "state": "Sin enviar a la DIAN",
+        "date": "2022-12-14"
+    },
+    {
+        "pk": 1196,
+        "consecutive": 33,
+        "client": "David",
+        "total": 4189.0,
+        "state": "Sin enviar a la DIAN",
+        "date": "2022-12-14"
+    },
+    {
+        "pk": 1195,
+        "consecutive": 32,
+        "client": "David",
+        "total": 4644.0,
+        "state": "Sin enviar a la DIAN",
+        "date": "2022-12-14"
+    },
+    {
+        "pk": 1194,
+        "consecutive": 31,
+        "client": "David",
+        "total": 1912.0,
+        "state": "Sin enviar a la DIAN",
+        "date": "2022-12-14"
+    },
+    {
+        "pk": 1193,
+        "consecutive": 30,
+        "client": "David",
+        "total": 3262.0,
+        "state": "Sin enviar a la DIAN",
+        "date": "2022-12-14"
+    },
+    {
+        "pk": 1192,
+        "consecutive": 29,
+        "client": "David",
+        "total": 4485.9,
+        "state": "Sin enviar a la DIAN",
+        "date": "2022-12-14"
+    },
+    {
+        "pk": 1191,
+        "consecutive": 28,
+        "client": "David",
+        "total": 2196.0,
+        "state": "Sin enviar a la DIAN",
+        "date": "2022-12-14"
+    },
+    {
+        "pk": 1190,
+        "consecutive": 27,
+        "client": "David",
+        "total": 2332.0,
+        "state": "Sin enviar a la DIAN",
+        "date": "2022-12-14"
+    },
+    {
+        "pk": 1189,
+        "consecutive": 26,
+        "client": "David",
+        "total": 4527.0,
+        "state": "Sin enviar a la DIAN",
+        "date": "2022-12-14"
+    },
+    {
+        "pk": 1188,
+        "consecutive": 25,
+        "client": "David",
+        "total": 1530.0,
+        "state": "Sin enviar a la DIAN",
+        "date": "2022-12-14"
+    },
+    {
+        "pk": 1187,
+        "consecutive": 24,
+        "client": "David",
+        "total": 4095.0,
+        "state": "Sin enviar a la DIAN",
+        "date": "2022-12-14"
+    },
+    {
+        "pk": 1186,
+        "consecutive": 23,
+        "client": "David",
+        "total": 3012.0,
+        "state": "Sin enviar a la DIAN",
+        "date": "2022-12-14"
+    },
+    {
+        "pk": 1185,
+        "consecutive": 22,
+        "client": "David",
+        "total": 2766.0,
+        "state": "Sin enviar a la DIAN",
+        "date": "2022-12-14"
+    },
+    {
+        "pk": 1184,
+        "consecutive": 21,
+        "client": "David",
+        "total": 2080.0,
+        "state": "Sin enviar a la DIAN",
+        "date": "2022-12-14"
+    },
+    {
+        "pk": 1183,
+        "consecutive": 20,
+        "client": "David",
+        "total": 3669.0,
+        "state": "Sin enviar a la DIAN",
+        "date": "2022-12-14"
+    },
+    {
+        "pk": 1182,
+        "consecutive": 19,
+        "client": "David",
+        "total": 4839.0,
+        "state": "Sin enviar a la DIAN",
+        "date": "2022-12-14"
+    },
+    {
+        "pk": 1181,
+        "consecutive": 18,
+        "client": "David",
+        "total": 2876.0,
+        "state": "Sin enviar a la DIAN",
+        "date": "2022-12-14"
+    },
+    {
+        "pk": 1180,
+        "consecutive": 17,
+        "client": "David",
+        "total": 2761.0,
+        "state": "Sin enviar a la DIAN",
+        "date": "2022-12-14"
+    },
+    {
+        "pk": 1179,
+        "consecutive": 16,
+        "client": "David",
+        "total": 4087.1,
+        "state": "Sin enviar a la DIAN",
+        "date": "2022-12-14"
+    },
+    {
+        "pk": 1178,
+        "consecutive": 15,
+        "client": "David",
+        "total": 2286.9,
+        "state": "Sin enviar a la DIAN",
+        "date": "2022-12-14"
+    },
+    {
+        "pk": 1177,
+        "consecutive": 14,
+        "client": "David",
+        "total": 3176.0,
+        "state": "Sin enviar a la DIAN",
+        "date": "2022-12-14"
+    },
+    {
+        "pk": 1176,
+        "consecutive": 13,
+        "client": "David",
+        "total": 3253.0,
+        "state": "Sin enviar a la DIAN",
+        "date": "2022-12-14"
+    },
+    {
+        "pk": 1175,
+        "consecutive": 12,
+        "client": "David",
+        "total": 2966.0,
+        "state": "Sin enviar a la DIAN",
+        "date": "2022-12-14"
+    },
+    {
+        "pk": 1174,
+        "consecutive": 11,
+        "client": "David",
+        "total": 1656.0,
+        "state": "Sin enviar a la DIAN",
+        "date": "2022-12-14"
+    },
+    {
+        "pk": 1173,
+        "consecutive": 10,
+        "client": "David",
+        "total": 2260.0,
+        "state": "Sin enviar a la DIAN",
+        "date": "2022-12-14"
+    },
+    {
+        "pk": 1172,
+        "consecutive": 9,
+        "client": "David",
+        "total": 4240.0,
+        "state": "Sin enviar a la DIAN",
+        "date": "2022-12-14"
+    },
+    {
+        "pk": 1171,
+        "consecutive": 8,
+        "client": "David",
+        "total": 1632.0,
+        "state": "Sin enviar a la DIAN",
+        "date": "2022-12-14"
+    },
+    {
+        "pk": 1170,
+        "consecutive": 7,
+        "client": "David",
+        "total": 4931.0,
+        "state": "Sin enviar a la DIAN",
+        "date": "2022-12-14"
+    },
+    {
+        "pk": 1169,
+        "consecutive": 6,
+        "client": "David",
+        "total": 3930.0,
+        "state": "Sin enviar a la DIAN",
+        "date": "2022-12-14"
+    },
+    {
+        "pk": 1168,
+        "consecutive": 5,
+        "client": "David",
+        "total": 4116.0,
+        "state": "Sin enviar a la DIAN",
+        "date": "2022-12-14"
+    },
+    {
+        "pk": 1167,
+        "consecutive": 4,
+        "client": "David",
+        "total": 3844.1,
+        "state": "Procesado Correctamente",
+        "date": "2022-12-14"
+    },
+    {
+        "pk": 1166,
+        "consecutive": 3,
+        "client": "David",
+        "total": 3412.0,
+        "state": "Procesado Correctamente",
+        "date": "2022-12-14"
+    },
+    {
+        "pk": 1165,
+        "consecutive": 2,
+        "client": "David",
+        "total": 3149.0,
+        "state": "Procesado Correctamente",
+        "date": "2022-12-14"
+    },
+    {
+        "pk": 1164,
+        "consecutive": 1,
+        "client": "David",
+        "total": 14009.9,
+        "state": "Procesado Correctamente",
+        "date": "2022-12-14"
+    }
+]

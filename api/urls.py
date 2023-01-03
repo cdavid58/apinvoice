@@ -13,6 +13,7 @@ urlpatterns = [
     url(r'^invoice_fe/', include('invoice.urls')),
     url(r'^pos/', include('pos.urls')),
     url(r'^data/', include('data.urls')),
+    url(r'^settings/', include('settings.urls')),
 ]
 
 urlpatterns += static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)

@@ -124,3 +124,13 @@ def GET_CONSECUTIVE(request):
 		query = Consecutive_POS.objects.get(company = data['company']).number
 
 	return Response({'consecutive':query})
+
+@api_view(['POST'])
+def CLEAN_FILE(request):
+	data = request.data
+	invoice = Invoice_FE.objects.filter(consecutive = data['consecutive']).last()
+	invoice.state = data['state']
+	invoice.save()
+	with open("./static/earring.json","w") as file:
+		json.dump([], file, indent=4)
+	return Response({'Result':True})
