@@ -4,27 +4,47 @@ from rest_framework.response import Response
 from rest_framework import serializers
 from django.shortcuts import render
 from .models import Employee
-from company.models import Company
+from company.models import Company, License
 import base64,sqlite3,json
 from PIL import Image
 from io import BytesIO
 from invoice.models import Invoice_FE
 
+
 @api_view(['POST'])
 def Register_Employee(request):
 	data = request.data
-	employee = Employee.objects.get(documentI = data['documentI'])
-	employee.Block_Employee()
-	Employee(
-		documentI = data['documentI'],
-		name = data['name'],
-		phone = data['phone'],
-		email = data['email'],
-		user = data['user'],
-		psswd = data['psswd'],
-		company = Company.objects.get(nit = data['company'])
-	).save()
-	return Response({'Result':True})
+	result = False
+	message = None
+	try:
+		employee = Employee.objects.get(documentI = data['documentI'])
+		message = "already registered employee"
+	except Employee.DoesNotExist as e:
+		employee = None
+
+	if employee is None:
+		company = Company.objects.get(pk = data['company'])
+		license = License.objects.get(company = company)
+		if license.employee >= 1:
+			try:
+				Employee(
+					documentI = data['documentI'],
+					name = data['name'],
+					phone = data['phone'],
+					email = data['email'],
+					user = data['user'],
+					psswd = data['psswd'],
+					company = company
+				).save()
+				result = True
+				message = "Success"
+				license.employee -= 1
+				license.save()
+			except Exception as e:
+				message = e
+		else:
+			message = "sold out"
+	return Response({'Result':result,'message':str(message)})
 
 def FE(type_invoice,company):
 	conn = sqlite3.connect('db.sqlite3')
@@ -57,14 +77,6 @@ def Validate_Login(request):
 	try:
 		employee = Employee.objects.get(user = data['user'], psswd=data['psswd'])
 		result = {'result':True,'company':employee.company.pk,'employee':employee.pk}
-		# try:
-		# 	invoice_fe = Invoice_FE.objects.filter(company = employee.company)
-		# except Invoice_FE.DoesNotExist:
-		# 	invoice_fe = None
-		# if invoice_fe is not None:
-		# 	data = FE(1,employee.company.pk)
-		# 	with open('./static/data_fe.json', 'w') as file:
-		# 		json.dump(data, file, indent=4)
 
 	except Employee.DoesNotExist:
 		result = {'result':False}

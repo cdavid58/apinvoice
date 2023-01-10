@@ -23,7 +23,7 @@ class Supplier(models.Model):
 
 
 class Inventory(models.Model):
-	code = models.IntegerField(max_length = 25)
+	code = models.CharField(max_length = 100)
 	name = models.CharField(max_length = 150)
 	quanty = models.IntegerField()
 	tax = models.IntegerField(default=0)

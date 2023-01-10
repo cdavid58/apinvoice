@@ -30,21 +30,21 @@ class Invoice_FE(models.Model):
 	def Base_Product(self):
 		base = self.price / ( 1 + ( self.tax / 100 ))
 		base_with_discount = base * (self.discount / 100)
-		return round(base - base_with_discount,1)
+		return float(base - base_with_discount)
 
 	def Discount_Product(self):
 		base = self.price / ( 1 + ( self.tax / 100 ))
-		return round(base * (self.discount / 100),1)
+		return float(base * (self.discount / 100))
 
 
 	def Tax_Product(self):
-		return round( (self.Base_Product() * (self.tax / 100)) * self.quanty,1)
+		return float((self.Base_Product() * (self.tax / 100)) * self.quanty)
 
 	def SubTotal_Product(self):
-		return round(self.Base_Product() * self.quanty,1)
+		return float(self.Base_Product() * self.quanty)
 
 	def Total_Product(self):
-		return round( ( self.Base_Product() + (self.Tax_Product() / self.quanty)  ) * self.quanty,1)
+		return float(( self.Base_Product() + (self.Tax_Product() / self.quanty)  ) * self.quanty)
 
 
 class Wallet_FE(models.Model):

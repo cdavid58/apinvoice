@@ -8,14 +8,17 @@ class Company(models.Model):
 	phone = models.CharField(max_length = 20)
 	phone_2 = models.CharField(max_length = 20)
 	block = models.BooleanField(default=False)
+	token = models.CharField(max_length = 100, null= True, blank= True)
 
 	def __str__(self):
 		return self.name
 
 class License(models.Model):
 	price = models.FloatField(default = 0)
-	date_payment = models.CharField(max_length = 12)
-	dete_experied = models.CharField(max_length = 12)
+	date_payment = models.CharField(max_length = 30)
+	dete_experied = models.CharField(max_length = 30)
+	document_annual = models.IntegerField(default = 0)
+	employee = models.IntegerField(default = 1)
 	company = models.ForeignKey(Company, on_delete= models.CASCADE)
 
 	def __str__(self):
@@ -47,4 +50,7 @@ class Resolution_FE(models.Model):
 
 	def __str__(self):
 		return self.company.name
+
+
+
 

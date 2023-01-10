@@ -3,16 +3,27 @@ from rest_framework.decorators import api_view
 from rest_framework.response import Response
 from rest_framework import serializers
 from django.shortcuts import render
-from .models import Category, SubCategory
+from .models import Category, SubCategory,Inventory
 from .query_inventory import Query_Inventory
+from company.models import Company
 
-q = Query_Inventory()
+
 
 @api_view(['POST'])
 def CREATE_INVENTORY(request):
 	data = request.data
-	q.Create_Inventory(data)
-	return Response({'Result':True})
+	try:
+		inventory = Inventory.objects.get(code = data['code'],company = Company.objects.get(pk = data['company']))
+		result = False
+	except Inventory.DoesNotExist as e:
+		inventory = None
+		
+	if inventory is None:
+		q = Query_Inventory()
+		q.Create_Inventory(data)
+		result = True
+		del q
+	return Response({'Result':result})
 
 @api_view(['POST'])
 def Create_Category(request):
@@ -33,10 +44,12 @@ def CreateSubCategories(request):
 
 @api_view(['POST'])
 def GET_PRODUCT(request):
+	q = Query_Inventory()
 	return Response(q.GET_PRODUCT(request.data))
 
 
 @api_view(['POST'])
 def GET_LIST_INVENTORY(request):
 	data = request.data
+	q = Query_Inventory()
 	return Response(q.GET_LIST_INVENTORY(data))

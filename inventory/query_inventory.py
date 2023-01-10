@@ -16,13 +16,14 @@ class Query_Inventory:
 			price_5 = data['price_5'],
 			supplier = Supplier.objects.get(pk = data['supplier']),
 			subcategory = SubCategory.objects.get(pk = data['subcategory']),
-			company = Company.objects.get(nit = data['company'])
+			company = Company.objects.get(pk = data['company'])
 		).save()
 
 	def GET_PRODUCT(self,data):
 		_data = {}
 		try:
-			product = Inventory.objects.get( Q(code__contains = data['value']) | Q(name__icontains = data['value']) )
+			company = Company.objects.get(pk = data['company'])
+			product = Inventory.objects.get( Q(code__contains = data['value']) | Q(name__icontains = data['value']), company = company )
 			_data = {
 					"code":product.code,
 					"name":product.name,
@@ -43,13 +44,15 @@ class Query_Inventory:
 		return [
 			{
 				'pk':i.pk,
+				'code':i.code,
 				'name':i.name,
 				'quanty':i.quanty,
+				'tax':i.tax,
 				'price_1':i.price_1,
 				'price_2':i.price_2,
 				'price_3':i.price_3,
 				'price_4':i.price_4,
 				'price_5':i.price_5
 			}
-			for i in Inventory.objects.filter(company = Company.objects.get(nit = data['company']))
+			for i in Inventory.objects.filter(company = Company.objects.get(pk = data['company']))
 		]

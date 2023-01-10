@@ -15,28 +15,29 @@ class SEND_DIAN:
 		return {
 			"number": self.invoice.last().consecutive,
 			"type_document_id": 1,
-			"date": self.invoice.last().date,
-			"time": self.invoice.last().time,
-			"resolution_number": "18760000001",
-			"prefix": "SETP",
-		   "notes": "ESTA ES UNA NOTA DE PRUEBA, ESTA ES UNA NOTA DE PRUEBA, ESTA ES UNA NOTA DE PRUEBA, ESTA ES UNA NOTA DE PRUEBA, ESTA ES UNA NOTA DE PRUEBA, ESTA ES UNA NOTA DE PRUEBA, ESTA ES UNA NOTA DE PRUEBA, ESTA ES UNA NOTA DE PRUEBA, ESTA ES UNA NOTA DE PRUEBA, ESTA ES UNA NOTA DE PRUEBA, ESTA ES UNA NOTA DE PRUEBA, ESTA ES UNA NOTA DE PRUEBA, ESTA ES UNA NOTA DE PRUEBA, ESTA ES UNA NOTA DE PRUEBA",
+			"date": "2023-01-06",
+			"time": "04:08:12",
+			"resolution_number": "18764042060055",
+			"prefix": "FFET",
+		   "notes": "ESTA ES UNA NOTA DE PRUEBA",
 		   "disable_confirmation_text": True,
 		   "establishment_name": "TORRE SOFTWARE",
 		   "establishment_address": "BRR LIMONAR MZ 6 CS 3 ET 1 PISO 2",
 		   "establishment_phone": "3226563672",
-		   "establishment_municipality": 600,
+		   "establishment_municipality": 1,
+		   "foot_note": "PRUEBA DE TEXTO LIBRE QUE DEBE POSICIONARSE EN EL PIE DE PAGINA DE LA REPRESENTACION GRAFICA DE LA FACTURA ELECTRONICA VALIDACION PREVIA DIAN"
 		}
 
 	def Customer(self):
 		c = self.invoice.last().client
 		return {
-			"identification_number": c.identification_number,
+			"identification_number": str(c.identification_number)[:-1],
 			"dv": c.dv,
 			"name": c.name,
 			"phone": c.phone,
 			"address": c.address,
 			"email": c.email,
-			"merchant_registration": c.merchant_registration,
+			"merchant_registration": "0000000-00" if c.merchant_registration is None else c.merchant_registration,
 			"type_document_identification_id": c.type_documentI._id,
 			"type_organization_id": c.type_organization._id,
 	      "type_liability_id": 7,
@@ -69,6 +70,7 @@ class SEND_DIAN:
 			"tax_inclusive_amount": round(total),
 			"payable_amount": round(total)
 		}
+	
 	def VALUES_TAXES(self,tax,data):
 		total_base = 0
 		total_tax = 0
@@ -110,33 +112,33 @@ class SEND_DIAN:
 		return [
 			{
 				"unit_measure_id": 70,
-				"invoiced_quantity": i.quanty,
-				"line_extension_amount": i.SubTotal_Product(),
+				"invoiced_quantity": str(i.quanty),
+				"line_extension_amount": i.Base_Product(),
 				"free_of_charge_indicator": False,
 				"tax_totals": [
 					{
 						"tax_id": 1,
 						"tax_amount": i.Tax_Product(),
-						"taxable_amount": i.SubTotal_Product(),
+						"taxable_amount": i.Base_Product(),
 						"percent": i.tax
 					}
 				],
 				"description": i.description,
-	         # "notes": "ESTA ES UNA PRUEBA DE NOTA DE DETALLE DE LINEA.",
-				"code": i.code,
+	         "notes": "",
+				"code": str(i.code),
 				"type_item_identification_id": 4,
-				"price_amount": round(i.Total_Product()),
-				"base_quantity": i.quanty
+				"price_amount": str(i.price),
+				"base_quantity": "1"
 			}
 			for i in self.invoice
 		]
 
 	def Operations(self):
-		url = "http://apidian2022.oo/api/ubl2.1/invoice"
+		url = "http://localhost/apidian2021/public/api/ubl2.1/invoice"
 		headers = {
 		  'Content-Type': 'application/json',
 		  'Accept': 'application/json',
-		  'Authorization': 'Bearer 7692a20fec92af0aa5729d796b019d27c83c9955407994630a0cdd7702ca2329'
+		  'Authorization': 'Bearer fbcaff08718a4625e4885e76ac190d6cade6c001480ef6977994ece1829496f7'
 		}
 		data = self.Information()
 		data['customer'] = self.Customer()
@@ -144,21 +146,27 @@ class SEND_DIAN:
 		data['legal_monetary_totals'] = self.Monetary_Totals()
 		data['tax_totals'] = self.Tax_Totals()
 		data['invoice_lines'] = self.Invoice_Lines()
-		os.remove('./static/earring.json')
-		with open("./static/earring.json","w") as file:
-			json.dump(data, file, indent=4)
-
-		# response = requests.request("POST", url, headers=headers, data=payload)
-		# response_dict = json.loads(response.text)
-		# answer = response_dict['ResponseDian']['Envelope']['Body']['SendBillSyncResponse']['SendBillSyncResult']["StatusDescription"]
-		# if int(response.status_code) == 200:
-			# self.invoice.last().state = answer
-
-		self.invoice.last().state = 'Enviando la Factura'
-		self.invoice.last().save()
-
-		# response.connection.close()
-		return 'Procesado Correctamente'
+		payload = json.dumps(data)
+		print(payload)
+		response = requests.request("POST", url, headers=headers, data=payload)
+		response_dict = json.loads(response.text)
+		message = None
+		if int(response.status_code) == 200:
+			message = response_dict['ResponseDian']['Envelope']['Body']['SendBillSyncResponse']['SendBillSyncResult']["StatusDescription"]
+			if "Documento procesado anteriormente." in response_dict['ResponseDian']['Envelope']['Body']['SendBillSyncResponse']['SendBillSyncResult']['ErrorMessage']['string']:
+				message = "Documento procesado anteriormente."
+			elif "errors" in response_dict['ResponseDian']['Envelope']['Body']['SendBillSyncResponse']['SendBillSyncResult']['ErrorMessage']['string']:
+				message = response_dict['ResponseDian']['Envelope']['Body']['SendBillSyncResponse']['SendBillSyncResult']['ErrorMessage']['string']['errors']['errors']
+			for i in self.invoice:
+				i.state = message
+				i.save()
+		else:
+			message = "Por favor intentar mas tarde"
+			for i in self.invoice:
+				i.state = message
+				i.save()
+		response.connection.close()
+		return message
 
 
 
