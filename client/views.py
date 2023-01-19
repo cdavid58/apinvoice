@@ -27,3 +27,8 @@ def GET_CLIENT(request):
 def DELETE_CLIENT(request):
 	data = request.data
 	return Response({'client':c.DELETE_CLIENT(data)})
+
+@api_view(['POST'])
+def EDIT_CLIENT(request):
+	data = request.data
+	return Response({'result':c.EDIT_CLIENT(data)})

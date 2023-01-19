@@ -23,6 +23,7 @@ class Invoice_FE(models.Model):
 	client = models.ForeignKey(Client, on_delete=models.CASCADE)
 	company = models.ForeignKey(Company, on_delete = models.CASCADE)
 	state = models.TextField(default = "Sin enviar a la DIAN")
+	cufe= models.CharField(max_length = 100,null=True,blank=True)
 
 	def __str__(self):
 		return self.company.name+' | '+str(self.consecutive)
@@ -53,4 +54,15 @@ class Wallet_FE(models.Model):
 	days_in_debt = models.IntegerField(default = 0)
 	employee = models.ForeignKey(Employee,on_delete=models.CASCADE,null=True,blank=True)
 	company = models.ForeignKey(Company, on_delete = models.CASCADE)
+
+class NoteCredit(models.Model):
+	invoice = models.ForeignKey(Invoice_FE, on_delete = models.CASCADE)
+	number = models.IntegerField()
+	date = models.CharField(max_length = 10)
+	time = models.CharField(max_length = 10)
+	employee = models.ForeignKey(Employee,on_delete=models.CASCADE,null=True,blank=True)
+	company = models.ForeignKey(Company, on_delete = models.CASCADE)
+	state = models.TextField(default = "Sin enviar a la DIAN")
+	uuid = models.CharField(max_length = 100)
+
 

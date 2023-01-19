@@ -44,7 +44,8 @@ def GET_LIST_INVOICE(request):
 				'client':invoice.last().client.name,
 				'total': total,
 				"state":invoice.last().state,
-				'date':invoice.last().date
+				'date':invoice.last().date,
+				'cufe':invoice.last().cufe
 			}
 		)
 		total = 0
@@ -103,7 +104,15 @@ def Send_DIAN(request):
 	data = request.data
 	inv = Invoice_FE.objects.filter(consecutive = data['consecutive'])
 	sd = SEND_DIAN(inv)
-	return Response({'Result':sd.Operations()})
+	return Response({'Result':sd.Operations(1)})
+
+
+@api_view(['POST'])
+def NOTE_CREDIT_FE(request):
+	data = request.data
+	inv = Invoice_FE.objects.filter(consecutive = data['consecutive'])
+	sd = SEND_DIAN(inv)
+	return Response({'Result':sd.Operations(4)})
 
 
 @api_view(['POST'])
@@ -134,3 +143,19 @@ def CLEAN_FILE(request):
 	with open("./static/earring.json","w") as file:
 		json.dump([], file, indent=4)
 	return Response({'Result':True})
+
+@api_view(['POST'])
+def DELETE_INVOICE(request):
+	data = request.data
+	result = False
+	try:
+		invoice = Invoice_FE.objects.filter(consecutive = data['consecutive'],company = Company.objects.get(pk = data['company']))
+		if int(data['type_invoice']) == 2:
+			invoice = Invoice_POS.objects.filter(consecutive = data['consecutive'],company = Company.objects.get(pk = data['company']))
+		if invoice:
+			for i in invoice:
+				i.delete()
+			result = True
+	except Exception as e:
+		print(e)
+	return Response({'result':result})

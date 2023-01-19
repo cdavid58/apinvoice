@@ -53,3 +53,20 @@ def GET_LIST_INVENTORY(request):
 	data = request.data
 	q = Query_Inventory()
 	return Response(q.GET_LIST_INVENTORY(data))
+
+
+@api_view(['POST'])
+def UPDATE_PRODUCT(request):
+	data = request.data
+	q = Query_Inventory()
+	result = q.UPDATED_PRODUCT(data)
+	del q
+	return Response(result)
+
+@api_view(['POST'])
+def DELETE_PRODUCT(request):
+	data = request.data
+	q = Query_Inventory()
+	result = q.DELETE_PRODUCT(data)
+	del q
+	return Response({'result':result})

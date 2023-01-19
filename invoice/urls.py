@@ -8,4 +8,5 @@ urlpatterns=[
 		url(r'^Send_DIAN/$',Send_DIAN,name="Send_DIAN"),
 		url(r'^GET_CONSECUTIVE/$',GET_CONSECUTIVE,name="GET_CONSECUTIVE"),
 		url(r'^CLEAN_FILE/$',CLEAN_FILE,name="CLEAN_FILE"),
+		url(r'^DELETE_INVOICE/$',DELETE_INVOICE,name="DELETE_INVOICE"),
 	]

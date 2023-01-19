@@ -1,5 +1,6 @@
 from datetime import date
 import json, requests,os
+from company.models import Resolution_FE
 
 class SEND_DIAN:
 	def __init__(self,invoice):
@@ -11,19 +12,19 @@ class SEND_DIAN:
 		_days = (future_date - today).days
 		return _days
 
-	def Information(self):
+	def Information(self,type_document):
+		resolution = Resolution_FE.objects.get(company = self.invoice.last().employee.company)
 		return {
 			"number": self.invoice.last().consecutive,
-			"type_document_id": 1,
-			"date": "2023-01-06",
+			"type_document_id": type_document,
+			"date": "2023-01-18",
 			"time": "04:08:12",
-			"resolution_number": "18764042060055",
-			"prefix": "FFET",
+			"resolution_number": str(resolution.resolution),
+			"prefix": str(resolution.prefix),
 		   "notes": "ESTA ES UNA NOTA DE PRUEBA",
-		   "disable_confirmation_text": True,
-		   "establishment_name": "TORRE SOFTWARE",
-		   "establishment_address": "BRR LIMONAR MZ 6 CS 3 ET 1 PISO 2",
-		   "establishment_phone": "3226563672",
+		   "establishment_name": str(self.invoice.last().company.name),
+		   "establishment_address": str(self.invoice.last().company.address),
+		   "establishment_phone": str(self.invoice.last().company.phone),
 		   "establishment_municipality": 1,
 		   "foot_note": "PRUEBA DE TEXTO LIBRE QUE DEBE POSICIONARSE EN EL PIE DE PAGINA DE LA REPRESENTACION GRAFICA DE LA FACTURA ELECTRONICA VALIDACION PREVIA DIAN"
 		}
@@ -133,23 +134,25 @@ class SEND_DIAN:
 			for i in self.invoice
 		]
 
-	def Operations(self):
+	def Operations(self,type_document):
 		url = "http://localhost/apidian2021/public/api/ubl2.1/invoice"
+		if type_document == 4:
+			url = "http://localhost/apidian2021/public/api/ubl2.1/credit-note"
 		headers = {
 		  'Content-Type': 'application/json',
 		  'Accept': 'application/json',
-		  'Authorization': 'Bearer fbcaff08718a4625e4885e76ac190d6cade6c001480ef6977994ece1829496f7'
+		  'Authorization': 'Bearer '+str(self.invoice.last().company.token)
 		}
-		data = self.Information()
+		data = self.Information(type_document)
 		data['customer'] = self.Customer()
 		data['payment_form'] = self.Payment_Form()
 		data['legal_monetary_totals'] = self.Monetary_Totals()
 		data['tax_totals'] = self.Tax_Totals()
 		data['invoice_lines'] = self.Invoice_Lines()
 		payload = json.dumps(data)
-		print(payload)
 		response = requests.request("POST", url, headers=headers, data=payload)
 		response_dict = json.loads(response.text)
+		print(response_dict)
 		message = None
 		if int(response.status_code) == 200:
 			message = response_dict['ResponseDian']['Envelope']['Body']['SendBillSyncResponse']['SendBillSyncResult']["StatusDescription"]
@@ -158,6 +161,10 @@ class SEND_DIAN:
 			elif "errors" in response_dict['ResponseDian']['Envelope']['Body']['SendBillSyncResponse']['SendBillSyncResult']['ErrorMessage']['string']:
 				message = response_dict['ResponseDian']['Envelope']['Body']['SendBillSyncResponse']['SendBillSyncResult']['ErrorMessage']['string']['errors']['errors']
 			for i in self.invoice:
+				try:
+					i.cufe = response_dict['cufe']
+				except Exception as e:
+					pass
 				i.state = message
 				i.save()
 		else:
@@ -166,7 +173,7 @@ class SEND_DIAN:
 				i.state = message
 				i.save()
 		response.connection.close()
-		return message
+		return [message,response_dict['cufe']]
 
 
 

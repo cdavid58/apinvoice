@@ -4,6 +4,7 @@ from company.models import Company, License
 from employee.models import Employee
 from client.models import Client
 from data.models import Payment_Form
+from inventory.models import Inventory
 from settings.models import *
 import json
 
@@ -16,9 +17,14 @@ class Create_Invoice:
 		else:
 			self.value =  self.Create_Invoice_POS()
 
+	def Discount_Inventory(self,quanty,code):
+		inventory = Inventory.objects.get(code = code)
+		inventory.quanty -= int(quanty)
+		inventory.save()
+
 	def Create_Invoice_FE(self):
 		company = Company.objects.get(pk = self.data[0]['company'])
-		consecutive = Consecutive_FE.objects.last()
+		consecutive = Consecutive_FE.objects.get(company = company)
 		license = License.objects.get(company = company)
 		if license.document_annual >= 1:
 			for i in self.data:
@@ -41,6 +47,7 @@ class Create_Invoice:
 					client = Client.objects.get(pk = self.data[0]['client']),
 					company = company
 				).save()
+				self.Discount_Inventory(i['CANTIDAD'],i['CODIGO'])
 			invoice = Invoice_FE.objects.filter(consecutive = consecutive.number)
 			if not self.data[0]['cancelled']:
 				Wallet_FE(
@@ -48,6 +55,7 @@ class Create_Invoice:
 					company = invoice.company
 				).save()
 			total= 0
+
 			for i in invoice:
 				total += i.Total_Product()
 			data = {
@@ -90,6 +98,7 @@ class Create_Invoice:
 				client = Client.objects.get(pk = self.data[0]['client']),
 				company = company,
 			).save()
+			self.Discount_Inventory(i['CANTIDAD'],i['CODIGO'])
 		invoice = Invoice_POS.objects.filter(consecutive = consecutive.number)
 		if not self.data[0]['cancelled']:
 			Wallet_POS(

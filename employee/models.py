@@ -2,7 +2,7 @@ from django.db import models
 from company.models import Company
 
 class Employee(models.Model):
-	documentI = models.CharField(max_length = 12, unique = True)
+	documentI = models.CharField(max_length = 12)
 	name = models.CharField(max_length = 40)
 	phone = models.CharField(max_length = 12)
 	email = models.EmailField()

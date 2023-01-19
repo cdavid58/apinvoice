@@ -1,8 +1,8 @@
 from .models import *
+from settings.models import *
 import datetime
 
 class Query_Company:
-
 	def __init__(self, data):
 		self.data = data
 
@@ -16,16 +16,20 @@ class Query_Company:
 				phone = self.data['phone'],
 				phone_2 = self.data['phone_2']
 			).save()
+			company = Company.objects.get(nit = self.data['nit'])
+			Consecutive_FE(number = 1, company = company).save()
+			Consecutive_POS(number = 1, company = company).save()
 			result = True
 		except Exception as e:
-			result = False
+			print(e)
+			result = str(e)
 		return result
 		
 	def Licenses(self):
 		document_annual = 0
 		employee = 0
 		#LOS PRECIOS SON MENSUALES
-		if int(self.data['price']) == 0:
+		if int(self.data['price']) == 0:#FREE
 			document_annual = 9
 			employee = 1
 		elif int(self.data['price']) == 15000:
@@ -36,12 +40,12 @@ class Query_Company:
 			employee = 1
 		elif int(self.data['price']) == 46500:
 			document_annual = 500
-			employee = 1
+			employee = 2
 		elif int(self.data['price']) == 150000:
-			document_annual = 6000
+			document_annual = 1500
 			employee = 5
 		elif int(self.data['price']) == 166670:
-			document_annual = 8000
+			document_annual = 2300
 			employee = 5
 		elif int(self.data['price']) == 250000:
 			document_annual = 100000
