@@ -27,30 +27,32 @@ class Query_Company:
 		
 	def Licenses(self):
 		document_annual = 0
-		employee = 0
+		user = 0
+
 		#LOS PRECIOS SON MENSUALES
-		if int(self.data['price']) == 0:#FREE
+		if int(self.data['price']) == 0:# FREE 
 			document_annual = 9
-			employee = 1
+			user = 1
 		elif int(self.data['price']) == 15000:
 			document_annual = 25
-			employee = 1
+			user = 1
 		elif int(self.data['price']) == 22000:
 			document_annual = 50
-			employee = 1
+			user = 1
 		elif int(self.data['price']) == 46500:
 			document_annual = 500
-			employee = 2
+			user = 2
 		elif int(self.data['price']) == 150000:
 			document_annual = 1500
-			employee = 5
+			user = 5
 		elif int(self.data['price']) == 166670:
 			document_annual = 2300
-			employee = 5
+			user = 5
 		elif int(self.data['price']) == 250000:
-			document_annual = 100000
-			employee = 50
-		return [document_annual,employee]
+			document_annual = 50000
+			user = 50
+
+		return [document_annual,user]
 
 	def Create_License(self):
 		try:

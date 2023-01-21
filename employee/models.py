@@ -12,6 +12,7 @@ class Employee(models.Model):
 	company = models.ForeignKey(Company, on_delete = models.CASCADE)
 	img = models.ImageField(upload_to = "Img_Profile",null = True,blank=True)
 	type_employee = models.IntegerField(default = 1)
+	salary = models.FloatField(default = 0)
 
 	def __str__(self):
 		return self.name+' | '+self.company.name

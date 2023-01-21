@@ -12,6 +12,7 @@ class Create_Client:
 			result = False
 		except Client.DoesNotExist as e:
 			client = None
+			print(e)
 		if len(data['identification_number']) == 7 or  len(data['identification_number']) == 10:
 			if client is None:
 				Client(
@@ -34,6 +35,7 @@ class Create_Client:
 			result = False
 			message = "Documento I errado"
 		return {"result":result,'message':message}
+		
 	def GET_LIST_CLIENT(self,data):
 		return [
 			{

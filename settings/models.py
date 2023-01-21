@@ -14,3 +14,18 @@ class Consecutive_POS(models.Model):
 
 	def __str__(self):
 		return self.company.name
+
+class Value_Hour_Extra(models.Model):
+	code = models.IntegerField()
+	name = models.CharField(max_length = 80)
+
+
+class Value_Vacation(models.Model):
+	code = models.IntegerField()
+	name = models.CharField(max_length = 80)
+
+class Work_Disabilities(models.Model):
+	code = models.IntegerField()
+	name = models.CharField(max_length = 80)
+
+
